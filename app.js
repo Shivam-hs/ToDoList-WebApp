@@ -79,11 +79,11 @@ app.post("/", function(req, res){
 });
 
 app.post("/delete",function(req,res){
-const itemChecked = req.body.check;
+const itemCheckedid = req.body.check;
 const listKaName = req.body.listName;
 
 if (listKaName == "Today"){
-  Item.findByIdAndRemove(itemChecked, function(err){
+  Item.findByIdAndRemove(itemCheckedid, function(err){
     if (err) console.log(err);
     else console.log("Done");
   })
